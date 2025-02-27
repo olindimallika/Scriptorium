@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 where: {
                     id: Number(templateId),
                 },
-                // From GPT, asked how to generate associated blog posts of a given code template
+                //give associated blog posts of a given code template
                 include: {
                     blogPosts: {
                         select: {
