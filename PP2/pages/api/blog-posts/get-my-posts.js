@@ -1,5 +1,3 @@
-//claude
-// Backend: get-my-posts.js
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../utils/db';
 import { verifyToken } from '../../../utils/auth';
