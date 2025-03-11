@@ -1,4 +1,3 @@
-// code from chatgpt, asked it to get three templates from the database
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../utils/db';
 
