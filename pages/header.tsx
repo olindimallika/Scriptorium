@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
         >
             <h1 className="pe-5" style={{ fontSize: '1.5rem', margin: 0 }}>Scriptorium</h1>
             <button
-                className="mr-96 dark:text-white dark:bg-violet-800 bg-violet-200 text-black px-5 rounded-full font-semibold border-2 dark:border-white border-black hover:scale-105 transition-all duration-300"
+                className="mr-96 dark:text-white dark:bg-violet-800 bg-violet-200 text-black px-5 rounded-full font-semibold border-2 dark:border-white border-black hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-violet-300 dark:hover:shadow-violet-600"
                 onClick={toggleDarkMode}
             >
                 Theme: {darkMode ? "Dark" : "Light"}
@@ -25,14 +25,13 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
             <ul className="hidden md:flex items-center gap-4">
                 <li>
                     <Link
-                        className="ml-16 mr-8"
+                        className="ml-16 mr-8 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-violet-200 dark:hover:bg-violet-800 hover:shadow-lg hover:shadow-violet-300 dark:hover:shadow-violet-600 hover:scale-105"
                         href="/"
                         style={{
                             color: 'black',
                             textDecoration: 'none',
                             fontSize: '1rem',
-                            padding: '5px 10px',
-                            borderRadius: '5px',
+                            fontWeight: '500',
                         }}
                     >
                         Home
@@ -41,12 +40,11 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
 
                 <li style={{ position: 'relative' }}>
                     <div
-                        className="mr-6"
+                        className="mr-6 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-violet-200 dark:hover:bg-violet-800 hover:shadow-lg hover:shadow-violet-300 dark:hover:shadow-violet-600 hover:scale-105 cursor-pointer"
                         style={{
                             color: 'black',
                             fontSize: '1rem',
-                            padding: '5px 10px',
-                            cursor: 'pointer',
+                            fontWeight: '500',
                         }}
                     >
                         Blog Posts
@@ -65,12 +63,11 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
 
                 <li style={{ position: 'relative' }}>
                     <div
-                        className="mr-6"
+                        className="mr-6 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-violet-200 dark:hover:bg-violet-800 hover:shadow-lg hover:shadow-violet-300 dark:hover:shadow-violet-600 hover:scale-105 cursor-pointer"
                         style={{
                             color: 'black',
                             fontSize: '1rem',
-                            padding: '5px 10px',
-                            cursor: 'pointer',
+                            fontWeight: '500',
                         }}
                     >
                         Templates
@@ -88,18 +85,29 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
                 </li>
 
                 <li>
-                    <Link href="/frontend/code-writing-and-execution/input">Code Execution</Link>
+                    <Link 
+                        href="/frontend/code-writing-and-execution/input"
+                        className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-violet-200 dark:hover:bg-violet-800 hover:shadow-lg hover:shadow-violet-300 dark:hover:shadow-violet-600 hover:scale-105"
+                        style={{
+                            color: 'black',
+                            textDecoration: 'none',
+                            fontSize: '1rem',
+                            fontWeight: '500',
+                        }}
+                    >
+                        Code Execution
+                    </Link>
                 </li>
                 {isLoggedIn ? (
                     <li style={{ position: 'relative' }}>
                         <div
-                            className="ml-10"
+                            className="ml-10 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-violet-300 dark:hover:shadow-violet-600 hover:scale-105 cursor-pointer"
                             style={{
                                 width: '40px',
                                 height: '40px',
                                 borderRadius: '50%',
                                 overflow: 'hidden',
-                                cursor: 'pointer',
+                                border: '2px solid transparent',
                             }}
                         >
                             {user?.avatar ? (
@@ -169,7 +177,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
                 ) : (
                     <li>
                         <Link
-                            className="ml-4 flex px-8 text-white bg-violet-800 rounded-full font-semibold"
+                            className="ml-4 flex px-8 py-2 text-white bg-violet-800 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-violet-600 hover:scale-105"
                             href="/frontend/accounts/log-in"
                         >
                             Log in
@@ -184,7 +192,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
                     id="hamburger-menu" 
                     src="/hamburger.png" 
                     alt="Menu" 
-                    className="md:hidden w-20 h-10 cursor-pointer"
+                    className="md:hidden w-20 h-10 cursor-pointer transition-all duration-300 hover:scale-105"
                 />
                 {/* Dropdown Menu */}
                 <ul
