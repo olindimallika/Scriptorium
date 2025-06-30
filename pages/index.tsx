@@ -2,13 +2,18 @@ import React from 'react';
 import SearchBlogPosts from './frontend/blog-posts/search-blog';
 import SearchTemplates from './frontend/code-templates/search-templates';
 import SortedBlog from './frontend/blog-posts/sorted';
+import TypingEffect from '../components/TypingEffect';
 
 const Home: React.FC<{ darkMode: boolean }> = () => {
   return (
     <div className="min-h-screen transition-colors duration-300 bg-gray-200 dark:bg-black dark:text-white">
       <main className="flex flex-col p-5">
         <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-gray-100">
-          Welcome to Scriptorium
+          <TypingEffect 
+            text="Welcome to Scriptorium" 
+            speed={150}
+            className="text-4xl font-bold text-gray-800 dark:text-gray-100"
+          />
         </h1>
         <p className="text-lg text-center text-gray-600 dark:text-gray-300">
           Dive into the world of coding! Use our tools to execute and test your scripts.
