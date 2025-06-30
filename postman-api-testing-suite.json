@@ -1,0 +1,2829 @@
+{
+	"info": {
+		"_postman_id": "fe418215-d1ca-4606-a5a3-ee10dfc95a5b",
+		"name": "Scriptorium 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39401219",
+		"_collection_link": "https://scriptorium-1611.postman.co/workspace/Team-Workspace~e3fbb2c8-e828-4f69-84cc-d5151920a39a/collection/30159231-fe418215-d1ca-4606-a5a3-ee10dfc95a5b?action=share&source=collection_link&creator=39401219"
+	},
+	"item": [
+		{
+			"name": "sign-up Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"This\",\n    \"email\": \"example1@example.com\",\n    \"password\": \"password123\",\n    \"avatar\": \"/avatars/avatar1.png\",\n    \"phoneNumber\": \"123-456-7890\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/accounts/sign-up"
+			},
+			"response": [
+				{
+					"name": "sign-up Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"This\",\n    \"email\": \"example1@example.com\",\n    \"password\": \"password123\",\n    \"avatar\": \"/avatars/avatar1.png\",\n    \"phoneNumber\": \"123-456-7890\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/accounts/sign-up"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"aajqp99oe355\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 16:51:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User created successfully\",\n    \"user\": {\n        \"id\": 13,\n        \"firstName\": \"Test\",\n        \"lastName\": \"This\",\n        \"email\": \"example1@example.com\",\n        \"avatar\": \"/avatars/avatar1.png\",\n        \"phoneNumber\": \"123-456-7890\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "sign-up Test creating a system admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"This\",\n    \"email\": \"example3@example.com\",\n    \"password\": \"password123\",\n    \"avatar\": \"/avatars/avatar1.png\",\n    \"phoneNumber\": \"123-456-7890\",\n    \"role\": \"admin\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/accounts/sign-up"
+			},
+			"response": [
+				{
+					"name": "sign-up Test creating a system admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"This\",\n    \"email\": \"example3@example.com\",\n    \"password\": \"password123\",\n    \"avatar\": \"/avatars/avatar1.png\",\n    \"phoneNumber\": \"123-456-7890\",\n    \"role\": \"admin\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/accounts/sign-up"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"xv07ia9p7n5j\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 17:54:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User created successfully\",\n    \"user\": {\n        \"id\": 5,\n        \"firstName\": \"Test\",\n        \"lastName\": \"This\",\n        \"email\": \"example3@example.com\",\n        \"avatar\": \"/avatars/avatar1.png\",\n        \"phoneNumber\": \"123-456-7890\",\n        \"role\": \"admin\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "log-in Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.environment.set('accessToken', response.accessToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"example2@example.com\",\n  \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/accounts/log-in"
+			},
+			"response": [
+				{
+					"name": "log-in Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"example1@example.com\",\n  \"password\": \"password123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/accounts/log-in"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"121mkwyvau9ba\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "406"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 16:52:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJlbWFpbCI6ImV4YW1wbGUxQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTY2MzI2LCJleHAiOjE3MzA1Njk5MjZ9.kWsKY8CsSzU4O8QWjKTOoVMmdIdQfady6414S8YjPJ0\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJlbWFpbCI6ImV4YW1wbGUxQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTY2MzI2LCJleHAiOjE3MzExNzExMjZ9.g2R6asqfIDTl_TxFflMUJRd3yTdP8Cy6I0H2hLaOIhA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "log-in Test loggin in as a system admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.environment.set('accessToken', response.accessToken);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"example3@example.com\",\n  \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/accounts/log-in"
+			},
+			"response": [
+				{
+					"name": "log-in Test loggin in as a system admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"example3@example.com\",\n  \"password\": \"password123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/accounts/log-in"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"adfzq1yvzbb8\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "404"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 19:46:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImVtYWlsIjoiZXhhbXBsZTNAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA2NjMyMDksImV4cCI6MTczMDY2NDEwOX0.9yyCGJ_cYeA2Qh8vqfLj5n4jMotRB9s05Rbg2FXbxpk\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImVtYWlsIjoiZXhhbXBsZTNAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA2NjMyMDksImV4cCI6MTczMTAwODgwOX0.4oa_puuVGwhR4FBs79PPtSLVg34CckJCDxr2WU7niGQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "log-out Test",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczMDcxMjIzOSwiZXhwIjoxNzMwNzEzMTM5fQ.R3b63SOMRLC2MpUYY4_Zrm_IMyY9zii5LAG-HPnuIAk",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/accounts/log-out"
+			},
+			"response": [
+				{
+					"name": "log-out Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczMDcxMjIzOSwiZXhwIjoxNzMwNzEzMTM5fQ.R3b63SOMRLC2MpUYY4_Zrm_IMyY9zii5LAG-HPnuIAk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/accounts/log-out"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"3k5hhjb15i12\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Nov 2024 09:25:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully logged out.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastName\": \"thisss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/accounts/edit?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"accounts",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit Test",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA1NzA4MTEsImV4cCI6MTczMDU3MTcxMX0.uQANeVScC6n10KRN_5kq-RIPI0YXXVOeJTx2uHeZXKs",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"thisss\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/accounts/edit?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"accounts",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"aggqsfwaki50\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 18:07:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated successfully.\",\n    \"user\": {\n        \"firstName\": \"Test\",\n        \"lastName\": \"thisss\",\n        \"email\": \"example1@example.com\",\n        \"avatar\": \"/avatars/avatar1.png\",\n        \"phoneNumber\": \"123-456-7890\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "write-code Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\": \"a = 5\\nb = 10\\nprint(a + b)\",\n  \"language\": \"python\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-writing-and-execution/write-code"
+			},
+			"response": [
+				{
+					"name": "write-code Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJlbWFpbCI6ImRkQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNjc1NjEzLCJleHAiOjE3MzA3MDgwMTN9.AQF7d7BuKsstw792I5OpO4sGx_cYmP3xrccfVwHas3I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"a = 5\\nb = 10\\nprint(a + b)\",\n  \"language\": \"python\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-writing-and-execution/write-code"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"2atdroan7jt\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 23:33:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"stdout\": \"15\\n\",\n    \"stderr\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "input Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"print(input())\",\r\n    \"language\": \"python\",\r\n    \"input\": \"Hello World!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-writing-and-execution/input"
+			},
+			"response": [
+				{
+					"name": "input Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"print(input())\",\r\n    \"language\": \"python\",\r\n    \"input\": \"Hello World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-writing-and-execution/input"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"4ochw49glm12\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 21:35:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"output\": \"Hello World!\\n\",\n    \"error\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "save Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"C++ Sorting Algorithm\",\r\n    \"explanation\": \"Template for implementing sorting algorithms in C++.\",\r\n    \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\r\n    \"tags\": [\"cpp\", \"algorithm\", \"sorting\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-templates/save"
+			},
+			"response": [
+				{
+					"name": "save Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA1ODg0OTcsImV4cCI6MTczMDU4OTM5N30.cwyljCs4_rNkOWQp5LAqfroIwzN-NgIeALB5XRIDVK4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"C++ Sorting Algorithm\",\r\n    \"explanation\": \"Template for implementing sorting algorithms in C++.\",\r\n    \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\r\n    \"tags\": [\"cpp\", \"algorithm\", \"sorting\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-templates/save"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"11ap2txh67gjq\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "710"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:09:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Template saved successfully\",\n    \"template\": {\n        \"id\": 9,\n        \"title\": \"C++ Sorting Algorithm\",\n        \"explanation\": \"Template for implementing sorting algorithms in C++.\",\n        \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\n        \"isFork\": false,\n        \"forkedFromId\": null,\n        \"userId\": 2,\n        \"tags\": [\n            {\n                \"id\": 25,\n                \"name\": \"cpp\",\n                \"templateId\": 9\n            },\n            {\n                \"id\": 26,\n                \"name\": \"algorithm\",\n                \"templateId\": 9\n            },\n            {\n                \"id\": 27,\n                \"name\": \"sorting\",\n                \"templateId\": 9\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "save Test saving a template with associated blog posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"C++ Sorting Algorithm\",\r\n    \"explanation\": \"Template for implementing sorting algorithms in C++.\",\r\n    \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\r\n    \"tags\": [\"cpp\", \"algorithm\", \"sorting\"],\r\n    \"blogPostIds\": [2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-templates/save"
+			},
+			"response": [
+				{
+					"name": "save Test with blogPosts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA2MDI3MDMsImV4cCI6MTczMDYwMzYwM30.6_VRktMT-7Qsp89XjVp9wHh6E5TFM4j5_tWSjYZgZy0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"C++ Sorting Algorithm\",\r\n    \"explanation\": \"Template for implementing sorting algorithms in C++.\",\r\n    \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\r\n    \"tags\": [\"cpp\", \"algorithm\", \"sorting\"],\r\n    \"blogPostIds\": [2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-templates/save"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"65fh0i81pzp1\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "901"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 03:10:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Template saved successfully\",\n    \"template\": {\n        \"id\": 11,\n        \"title\": \"C++ Sorting Algorithm\",\n        \"explanation\": \"Template for implementing sorting algorithms in C++.\",\n        \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\n        \"isFork\": false,\n        \"forkedFromId\": null,\n        \"userId\": 2,\n        \"tags\": [\n            {\n                \"id\": 31,\n                \"name\": \"cpp\",\n                \"templateId\": 11\n            },\n            {\n                \"id\": 32,\n                \"name\": \"algorithm\",\n                \"templateId\": 11\n            },\n            {\n                \"id\": 33,\n                \"name\": \"sorting\",\n                \"templateId\": 11\n            }\n        ],\n        \"blogPosts\": [\n            {\n                \"id\": 2,\n                \"title\": \"Blog 1: Introduction to JavaScript\",\n                \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n                \"userId\": 2\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "search-saved Test POST searching templates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"Python\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/code-templates/search-saved?userId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"code-templates",
+						"search-saved"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "search-saved Test POST searching templates",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA1OTA2NTYsImV4cCI6MTczMDU5MTU1Nn0.NV83YmZ0aTuUEoFyLhqJelHBlHCSXtwmTGAEyyEhE4Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"Python\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/code-templates/search-saved?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"code-templates",
+								"search-saved"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"t290wq5ificy\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "466"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:37:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"savedTemplates\": [\n        {\n            \"title\": \"Python Loops\",\n            \"explanation\": \"Template demonstrating basic loops in Python.\",\n            \"tags\": [\n                {\n                    \"id\": 7,\n                    \"name\": \"python\",\n                    \"templateId\": 3\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"loops\",\n                    \"templateId\": 3\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"beginner\",\n                    \"templateId\": 3\n                }\n            ]\n        },\n        {\n            \"title\": \"Django Project Setup\",\n            \"explanation\": \"Steps to set up a basic Django project.\",\n            \"tags\": [\n                {\n                    \"id\": 19,\n                    \"name\": \"django\",\n                    \"templateId\": 7\n                },\n                {\n                    \"id\": 20,\n                    \"name\": \"python\",\n                    \"templateId\": 7\n                },\n                {\n                    \"id\": 21,\n                    \"name\": \"webdevelopment\",\n                    \"templateId\": 7\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "search-saved Test GET viewing templates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/code-templates/search-saved?userId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"code-templates",
+						"search-saved"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "search-saved Test GET viewing templates",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA1ODgzOTIsImV4cCI6MTczMDU4OTI5Mn0.21O35nkqCwvbPhlaURr1GHMH8l7UKMnrxKROb75kRHM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/code-templates/search-saved?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"code-templates",
+								"search-saved"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"a1pecoc5w41l1\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:11:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"savedTemplates\": [\n        {\n            \"title\": \"JavaScript Basics\",\n            \"explanation\": \"A template for basic JavaScript syntax and examples.\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"javascript\",\n                    \"templateId\": 1\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"basics\",\n                    \"templateId\": 1\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"beginner\",\n                    \"templateId\": 1\n                }\n            ]\n        },\n        {\n            \"title\": \"JavaScript Basics\",\n            \"explanation\": \"A template for basic JavaScript syntax and examples.\",\n            \"tags\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"javascript\",\n                    \"templateId\": 2\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"basics\",\n                    \"templateId\": 2\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"beginner\",\n                    \"templateId\": 2\n                }\n            ]\n        },\n        {\n            \"title\": \"Python Loops\",\n            \"explanation\": \"Template demonstrating basic loops in Python.\",\n            \"tags\": [\n                {\n                    \"id\": 7,\n                    \"name\": \"python\",\n                    \"templateId\": 3\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"loops\",\n                    \"templateId\": 3\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"beginner\",\n                    \"templateId\": 3\n                }\n            ]\n        },\n        {\n            \"title\": \"HTML Basic Structure\",\n            \"explanation\": \"A starting template for basic HTML structure.\",\n            \"tags\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"html\",\n                    \"templateId\": 4\n                },\n                {\n                    \"id\": 11,\n                    \"name\": \"structure\",\n                    \"templateId\": 4\n                },\n                {\n                    \"id\": 12,\n                    \"name\": \"beginner\",\n                    \"templateId\": 4\n                }\n            ]\n        },\n        {\n            \"title\": \"CSS Styling\",\n            \"explanation\": \"A template with basic CSS styling examples.\",\n            \"tags\": [\n                {\n                    \"id\": 13,\n                    \"name\": \"css\",\n                    \"templateId\": 5\n                },\n                {\n                    \"id\": 14,\n                    \"name\": \"styling\",\n                    \"templateId\": 5\n                },\n                {\n                    \"id\": 15,\n                    \"name\": \"frontend\",\n                    \"templateId\": 5\n                }\n            ]\n        },\n        {\n            \"title\": \"Java HelloWorld\",\n            \"explanation\": \"Basic Java HelloWorld example.\",\n            \"tags\": [\n                {\n                    \"id\": 16,\n                    \"name\": \"java\",\n                    \"templateId\": 6\n                },\n                {\n                    \"id\": 17,\n                    \"name\": \"helloworld\",\n                    \"templateId\": 6\n                },\n                {\n                    \"id\": 18,\n                    \"name\": \"beginner\",\n                    \"templateId\": 6\n                }\n            ]\n        },\n        {\n            \"title\": \"Django Project Setup\",\n            \"explanation\": \"Steps to set up a basic Django project.\",\n            \"tags\": [\n                {\n                    \"id\": 19,\n                    \"name\": \"django\",\n                    \"templateId\": 7\n                },\n                {\n                    \"id\": 20,\n                    \"name\": \"python\",\n                    \"templateId\": 7\n                },\n                {\n                    \"id\": 21,\n                    \"name\": \"webdevelopment\",\n                    \"templateId\": 7\n                }\n            ]\n        },\n        {\n            \"title\": \"Node.js Basic Server\",\n            \"explanation\": \"A basic Node.js server setup using Express.\",\n            \"tags\": [\n                {\n                    \"id\": 22,\n                    \"name\": \"nodejs\",\n                    \"templateId\": 8\n                },\n                {\n                    \"id\": 23,\n                    \"name\": \"server\",\n                    \"templateId\": 8\n                },\n                {\n                    \"id\": 24,\n                    \"name\": \"backend\",\n                    \"templateId\": 8\n                }\n            ]\n        },\n        {\n            \"title\": \"C++ Sorting Algorithm\",\n            \"explanation\": \"Template for implementing sorting algorithms in C++.\",\n            \"tags\": [\n                {\n                    \"id\": 25,\n                    \"name\": \"cpp\",\n                    \"templateId\": 9\n                },\n                {\n                    \"id\": 26,\n                    \"name\": \"algorithm\",\n                    \"templateId\": 9\n                },\n                {\n                    \"id\": 27,\n                    \"name\": \"sorting\",\n                    \"templateId\": 9\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "edit-template Test PUT updating code template",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Pythony Loops\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/code-templates/edit-template?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"code-templates",
+						"edit-template"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit-template Test PUT updating code template",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA1OTE3NTUsImV4cCI6MTczMDU5MjY1NX0.arL75CIQPr1jjnwohv9mbsavr3ISqaSAJzyoAbe_dQo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pythony Loops\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/code-templates/edit-template?id=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"code-templates",
+								"edit-template"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"wmqijq5j8d6o\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:57:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Code template successfully updated.\",\n    \"template\": {\n        \"id\": 7,\n        \"title\": \"Pythony Loops\",\n        \"explanation\": \"Steps to set up a basic Django project.\",\n        \"code\": \"django-admin startproject myproject\",\n        \"isFork\": false,\n        \"forkedFromId\": null,\n        \"userId\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "edit-template Test DELETE deleting code template",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/code-templates/edit-template?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"code-templates",
+						"edit-template"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit-template Test DELETE deleting code template",
+					"originalRequest": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/code-templates/edit-template?id=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"code-templates",
+								"edit-template"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "",
+					"header": "",
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "run-modify Test Authenticated",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateId\": 3,\n    \"modifiedCode\": \"console.log('testing template 3 fork save!');\",\n    \"saveAsFork\": true\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-templates/run-modify"
+			},
+			"response": [
+				{
+					"name": "run-modify Response Authenticated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"templateId\": 3,\n    \"modifiedCode\": \"console.log('testing template 3 fork save!');\",\n    \"saveAsFork\": true\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-templates/run-modify"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"113hg7oz37aau\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "390"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 20:11:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Template saved as a forked version!\",\n    \"template\": {\n        \"id\": 12,\n        \"title\": \"Node.js Basic Server (Fork)\",\n        \"explanation\": \"Forked version of template ID 3\",\n        \"code\": \"console.log('testing template 3 fork save!');\",\n        \"isFork\": true,\n        \"forkedFromId\": 3,\n        \"userId\": 16,\n        \"tags\": [\n            {\n                \"id\": 25,\n                \"name\": \"nodejs\",\n                \"templateId\": 12\n            },\n            {\n                \"id\": 26,\n                \"name\": \"server\",\n                \"templateId\": 12\n            },\n            {\n                \"id\": 27,\n                \"name\": \"backend\",\n                \"templateId\": 12\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "run-modify Test Visitor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateId\": 1,\n    \"modifiedCode\": \"console.log('testing template 1 fork BUT visitor!');\",\n    \"saveAsFork\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-templates/run-modify"
+			},
+			"response": [
+				{
+					"name": "run-modify Test Visitor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"templateId\": 1,\n    \"modifiedCode\": \"console.log('testing template 1 fork BUT visitor!');\",\n    \"saveAsFork\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-templates/run-modify"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"13amobha3pna0\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "360"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 20:21:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Template ready for modification\",\n    \"template\": {\n        \"id\": 1,\n        \"title\": \"My Sample Template\",\n        \"explanation\": \"This is an example of a template with code and tags.\",\n        \"code\": \"console.log('testing template 1 fork BUT visitor!');\",\n        \"isFork\": false,\n        \"forkedFromId\": null,\n        \"userId\": 16,\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"example\",\n                \"templateId\": 1\n            },\n            {\n                \"id\": 2,\n                \"name\": \"test\",\n                \"templateId\": 1\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "search Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": \"Python\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/code-templates/search"
+			},
+			"response": [
+				{
+					"name": "search Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": \"Python\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/code-templates/search"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"yg3gce2gili0\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "648"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 21:48:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codeTemplates\": [\n        {\n            \"id\": 4,\n            \"title\": \"Django Project Setup\",\n            \"explanation\": \"Steps to set up a basic Django project.\",\n            \"code\": \"django-admin startproject myproject\",\n            \"tags\": [\n                {\n                    \"name\": \"django\"\n                },\n                {\n                    \"name\": \"python\"\n                },\n                {\n                    \"name\": \"webdevelopment\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Django Project Setup\",\n            \"explanation\": \"Steps to set up a basic Django project.\",\n            \"code\": \"django-admin startproject myproject\",\n            \"tags\": [\n                {\n                    \"name\": \"django\"\n                },\n                {\n                    \"name\": \"python\"\n                },\n                {\n                    \"name\": \"webdevelopment\"\n                }\n            ]\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Django Project Setup (Fork)\",\n            \"explanation\": \"Forked version of template ID 4\",\n            \"code\": \"console.log('ANOTHER FORK');\",\n            \"tags\": [\n                {\n                    \"name\": \"django\"\n                },\n                {\n                    \"name\": \"python\"\n                },\n                {\n                    \"name\": \"webdevelopment\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create-blog Test POST/create blog post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New: Introduction to JavaScript\",\n  \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n  \"tags\": [\"javascript\", \"basics\", \"programming\"],\n  \"templateIds\": [1, 2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/create-blog"
+			},
+			"response": [
+				{
+					"name": "create-blog Test POST/create blog post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Blog 1: Introduction to JavaScript\",\n  \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n  \"tags\": [\"javascript\", \"basics\", \"programming\"],\n  \"templateIds\": [1, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-blog"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"cn1t98ksktlo\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "780"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 22:47:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog post created successfully!\",\n    \"blogPost\": {\n        \"id\": 3,\n        \"title\": \"Blog 1: Introduction to JavaScript\",\n        \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n        \"userId\": 16,\n        \"tags\": [\n            {\n                \"id\": 7,\n                \"name\": \"javascript\",\n                \"blogPostId\": 3\n            },\n            {\n                \"id\": 8,\n                \"name\": \"basics\",\n                \"blogPostId\": 3\n            },\n            {\n                \"id\": 9,\n                \"name\": \"programming\",\n                \"blogPostId\": 3\n            }\n        ],\n        \"templates\": [\n            {\n                \"id\": 1,\n                \"title\": \"My Sample Template\",\n                \"explanation\": \"This is an example of a template with code and tags.\",\n                \"code\": \"console.log('Hello, world!');\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            },\n            {\n                \"id\": 2,\n                \"title\": \"JavaScript Basics\",\n                \"explanation\": \"A template for basic JavaScript syntax and examples.\",\n                \"code\": \"console.log('This is JavaScript basics!');\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create-blog Test PUT/edit blog post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 6,\n  \"title\": \"EDITED TITLE: REST API with Node.js\",\n  \"description\": \"EDITED: REST API and Express and Node.js for developers\",\n  \"tags\": [\"nodejs\", \"api\", \"rest\"],\n  \"templateIds\": [3, 5, 1]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/create-blog"
+			},
+			"response": [
+				{
+					"name": "created blog post to EDIT",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Building a REST API with Node.js\",\n  \"description\": \"This guide covers creating a REST API with Express and Node.js, including best practices for development.\",\n  \"tags\": [\"nodejs\", \"api\", \"backend\", \"express\"],\n  \"templateIds\": [3, 4, 5]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-blog"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"g9p12lppewvp\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:05:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog post created successfully!\",\n    \"blogPost\": {\n        \"id\": 6,\n        \"title\": \"Building a REST API with Node.js\",\n        \"description\": \"This guide covers creating a REST API with Express and Node.js, including best practices for development.\",\n        \"userId\": 16,\n        \"tags\": [\n            {\n                \"id\": 21,\n                \"name\": \"nodejs\",\n                \"blogPostId\": 6\n            },\n            {\n                \"id\": 22,\n                \"name\": \"api\",\n                \"blogPostId\": 6\n            },\n            {\n                \"id\": 23,\n                \"name\": \"backend\",\n                \"blogPostId\": 6\n            },\n            {\n                \"id\": 24,\n                \"name\": \"express\",\n                \"blogPostId\": 6\n            }\n        ],\n        \"templates\": [\n            {\n                \"id\": 3,\n                \"title\": \"Node.js Basic Server\",\n                \"explanation\": \"A basic Node.js server setup using Express.\",\n                \"code\": \"const express = require('express'); const app = express(); app.get('/', (req, res) => res.send('Hello World!')); app.listen(3000, () => console.log('Server running on port 3000'));\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Django Project Setup\",\n                \"explanation\": \"Steps to set up a basic Django project.\",\n                \"code\": \"django-admin startproject myproject\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Django Project Setup\",\n                \"explanation\": \"Steps to set up a basic Django project.\",\n                \"code\": \"django-admin startproject myproject\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "edited blog to EDIT",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n  \"title\": \"EDITED TITLE: REST API with Node.js\",\n  \"description\": \"EDITED: REST API and Express and Node.js for developers\",\n  \"tags\": [\"nodejs\", \"api\", \"rest\"],\n  \"templateIds\": [3, 5, 1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-blog"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"14jpv4wv5wuta\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:08:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog post updated successfully!\",\n    \"blogPost\": {\n        \"id\": 6,\n        \"title\": \"EDITED TITLE: REST API with Node.js\",\n        \"description\": \"EDITED: REST API and Express and Node.js for developers\",\n        \"userId\": 16,\n        \"tags\": [\n            {\n                \"id\": 25,\n                \"name\": \"nodejs\",\n                \"blogPostId\": 6\n            },\n            {\n                \"id\": 26,\n                \"name\": \"api\",\n                \"blogPostId\": 6\n            },\n            {\n                \"id\": 27,\n                \"name\": \"rest\",\n                \"blogPostId\": 6\n            }\n        ],\n        \"templates\": [\n            {\n                \"id\": 1,\n                \"title\": \"My Sample Template\",\n                \"explanation\": \"This is an example of a template with code and tags.\",\n                \"code\": \"console.log('Hello, world!');\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Node.js Basic Server\",\n                \"explanation\": \"A basic Node.js server setup using Express.\",\n                \"code\": \"const express = require('express'); const app = express(); app.get('/', (req, res) => res.send('Hello World!')); app.listen(3000, () => console.log('Server running on port 3000'));\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Django Project Setup\",\n                \"explanation\": \"Steps to set up a basic Django project.\",\n                \"code\": \"django-admin startproject myproject\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create-blog Test DELETE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 7 // Replace with the blog post ID you want to delete\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/create-blog"
+			},
+			"response": [
+				{
+					"name": "created blog to DELETE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Getting Started with React\",\n  \"description\": \"A beginner's guide to building user interfaces with React.js.\",\n  \"tags\": [\"react\", \"frontend\", \"javascript\"],\n  \"templateIds\": [6, 7]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-blog"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"15vph1wzil0jd\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "697"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:10:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog post created successfully!\",\n    \"blogPost\": {\n        \"id\": 7,\n        \"title\": \"Getting Started with React\",\n        \"description\": \"A beginner's guide to building user interfaces with React.js.\",\n        \"userId\": 16,\n        \"tags\": [\n            {\n                \"id\": 28,\n                \"name\": \"react\",\n                \"blogPostId\": 7\n            },\n            {\n                \"id\": 29,\n                \"name\": \"frontend\",\n                \"blogPostId\": 7\n            },\n            {\n                \"id\": 30,\n                \"name\": \"javascript\",\n                \"blogPostId\": 7\n            }\n        ],\n        \"templates\": [\n            {\n                \"id\": 6,\n                \"title\": \"Fail Test\",\n                \"explanation\": \"Steps to set up a basic Django project.\",\n                \"code\": \"django-admin startproject myproject\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            },\n            {\n                \"id\": 7,\n                \"title\": \"Fail Test\",\n                \"explanation\": \"Steps to set up a basic Django project.\",\n                \"code\": \"django-admin startproject myproject\",\n                \"isFork\": false,\n                \"forkedFromId\": null,\n                \"userId\": 16\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "create-blog Test PUT/edit blog post Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNTc2MDE0LCJleHAiOjE3MzA2MDg0MTR9.j3c9lsrLFc7N9xxe6dRWJiv4m_sDjrTIbIPf_D_jezE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 7 // Replace with the blog post ID you want to delete\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-blog"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"psn7fvqlh619\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 02 Nov 2024 23:11:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog post deleted successfully!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "search-blog Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"API\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/search-blog"
+			},
+			"response": [
+				{
+					"name": "search-blog Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"API\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/search-blog"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"64l5terxbnai\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "378"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 00:04:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blogPosts\": [\n        {\n            \"id\": 6,\n            \"title\": \"EDITED TITLE: REST API with Node.js\",\n            \"description\": \"EDITED: REST API and Express and Node.js for developers\",\n            \"user\": {\n                \"firstName\": \"Test\",\n                \"lastName\": \"This\"\n            },\n            \"tags\": [\n                {\n                    \"name\": \"nodejs\"\n                },\n                {\n                    \"name\": \"api\"\n                },\n                {\n                    \"name\": \"rest\"\n                }\n            ],\n            \"templates\": [\n                {\n                    \"id\": 1,\n                    \"title\": \"My Sample Template\"\n                },\n                {\n                    \"id\": 3,\n                    \"title\": \"Node.js Basic Server\"\n                },\n                {\n                    \"id\": 5,\n                    \"title\": \"Django Project Setup\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "view-blog Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/blog-posts/view-blog?templateId=11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"blog-posts",
+						"view-blog"
+					],
+					"query": [
+						{
+							"key": "templateId",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "view-blog Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/blog-posts/view-blog?templateId=11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"blog-posts",
+								"view-blog"
+							],
+							"query": [
+								{
+									"key": "templateId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"uj8nocvcy1k5\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "725"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 03:13:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"template\": {\n        \"id\": 11,\n        \"title\": \"C++ Sorting Algorithm\",\n        \"explanation\": \"Template for implementing sorting algorithms in C++.\",\n        \"code\": \"#include <iostream> #include <vector> void bubbleSort(std::vector<int>& arr) { for (size_t i = 0; i < arr.size(); i++) { for (size_t j = 0; j < arr.size() - i - 1; j++) { if (arr[j] > arr[j + 1]) std::swap(arr[j], arr[j + 1]); } } } int main() { std::vector<int> arr = {5, 1, 4, 2, 8}; bubbleSort(arr); for (int num : arr) std::cout << num << ' '; return 0; }\",\n        \"isFork\": false,\n        \"forkedFromId\": null,\n        \"userId\": 2,\n        \"blogPosts\": [\n            {\n                \"id\": 2,\n                \"title\": \"Blog 1: Introduction to JavaScript\",\n                \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n                \"userId\": 2\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "create-comment Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"This is a great blog post! Thanks for sharing!\",\r\n    \"blogPostId\": 3,\r\n    \"rating\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/create-comment"
+			},
+			"response": [
+				{
+					"name": "create-comment Test",
+					"originalRequest": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"This is a great blog post! Thanks for sharing!\",\r\n    \"blogPostId\": 3,\r\n    \"rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-comment"
+					},
+					"_postman_previewlanguage": "",
+					"header": "",
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "create-comment Test writing a reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Nice post!\",\r\n    \"blogPostId\": 2,\r\n    \"parentId\": 4,\r\n    \"rating\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/create-comment"
+			},
+			"response": [
+				{
+					"name": "create-comment Test writing a reply",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiZXhhbXBsZTFAZXhhbXBsZS5jb20iLCJpYXQiOjE3MzA2MDcxNTYsImV4cCI6MTczMDYwODA1Nn0.4deZdmyVcEYZMSUi3eSm_J3m-Ib3ASIC3uI-f1NWpIc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Nice post!\",\r\n    \"blogPostId\": 2,\r\n    \"parentId\": 4,\r\n    \"rating\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/create-comment"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"5qyvh8wo40ch\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "449"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 04:21:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment created successfully!\",\n    \"comment\": {\n        \"id\": 9,\n        \"content\": \"Nice post!\",\n        \"userId\": 2,\n        \"blogPostId\": 2,\n        \"parentId\": 4,\n        \"rating\": 5,\n        \"blogPost\": {\n            \"id\": 2,\n            \"title\": \"Blog 1: Introduction to JavaScript\",\n            \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n            \"userId\": 2\n        },\n        \"parent\": {\n            \"id\": 4,\n            \"content\": \"This is a great blog post! Thanks for sharing!\",\n            \"userId\": 2,\n            \"blogPostId\": 3,\n            \"parentId\": null,\n            \"rating\": 4\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ratings BLOGPOST (2 downvotes, 1 upvote)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"blogPostId\": 10,\n  \"isUpvote\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/ratings"
+			},
+			"response": [
+				{
+					"name": "ratings BLOGPOST (2 downvotes, 1 upvote)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJlbWFpbCI6ImV4YW1wbGUxQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNjA4OTE3LCJleHAiOjE3MzA2NDEzMTd9.LzM4Mm_o2pxFHSd2nKQ8my10i7ZxEFYVGxbtPKG2iNo",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"blogPostId\": 10,\n  \"isUpvote\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/ratings"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"cc1mhtudyc26\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 05:02:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog post rating updated successfully!\",\n    \"upvotes\": 1,\n    \"downvotes\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "ratings-COMMENT (2 upvotes)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"commentId\": 5,   // Replace with the actual comment ID you want to upvote\n  \"isUpvote\": true  // Set to true for an upvote; some APIs may not require this if it defaults to upvote\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/blog-posts/ratings"
+			},
+			"response": [
+				{
+					"name": "ratings-COMMENT (2 upvotes)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3LCJlbWFpbCI6InR0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNjA5MjI1LCJleHAiOjE3MzA2NDE2MjV9.nH82BcnCkdjz-3C4bNqka_pvyIURJza-BY2BoHZ8rng",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"commentId\": 5,   // Replace with the actual comment ID you want to upvote\n  \"isUpvote\": true  // Set to true for an upvote; some APIs may not require this if it defaults to upvote\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/blog-posts/ratings"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"kq9f5pqfo824\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 06:08:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment rating updated successfully!\",\n    \"upvotes\": 2,\n    \"downvotes\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "sorted Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/blog-posts/sorted"
+			},
+			"response": [
+				{
+					"name": "sorted Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/blog-posts/sorted"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"txemdgweh41qq\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 06:05:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog posts and comments sorted by rating retrieved successfully!\",\n    \"blogPosts\": [\n        {\n            \"id\": 1,\n            \"title\": \"editing Blog Post title\",\n            \"description\": \"edited description.\",\n            \"upvoteCount\": 1,\n            \"downvoteCount\": 1,\n            \"comments\": [\n                {\n                    \"id\": 1,\n                    \"content\": \"This is my comment content.\",\n                    \"upvoteCount\": 0,\n                    \"downvoteCount\": 0,\n                    \"ratingScore\": 0\n                }\n            ],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Blog 1: Introduction to JavaScript\",\n            \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [\n                {\n                    \"id\": 5,\n                    \"content\": \"comment\",\n                    \"upvoteCount\": 2,\n                    \"downvoteCount\": 0,\n                    \"ratingScore\": 2\n                },\n                {\n                    \"id\": 3,\n                    \"content\": \"comment\",\n                    \"upvoteCount\": 1,\n                    \"downvoteCount\": 0,\n                    \"ratingScore\": 1\n                },\n                {\n                    \"id\": 4,\n                    \"content\": \"comment\",\n                    \"upvoteCount\": 0,\n                    \"downvoteCount\": 0,\n                    \"ratingScore\": 0\n                }\n            ],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Edited Title: NEW JavaScript Concepts!!!!!\",\n            \"description\": \"we edited this description: super easy guide.\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Edited Title: NEW JavaScript Concepts!!!!!\",\n            \"description\": \"we edited this description: super easy guide.\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 6,\n            \"title\": \"EDITED TITLE: REST API with Node.js\",\n            \"description\": \"EDITED: REST API and Express and Node.js for developers\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [\n                {\n                    \"id\": 6,\n                    \"content\": \"other comment\",\n                    \"upvoteCount\": 0,\n                    \"downvoteCount\": 0,\n                    \"ratingScore\": 0\n                }\n            ],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Getting Started with React\",\n            \"description\": \"A beginner's guide to building user interfaces with React.js.\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 9,\n            \"title\": \"New: Introduction to JavaScript\",\n            \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 11,\n            \"title\": \"TEST2\",\n            \"description\": \"TESTSTUFF\",\n            \"upvoteCount\": 0,\n            \"downvoteCount\": 0,\n            \"comments\": [],\n            \"ratingScore\": 0\n        },\n        {\n            \"id\": 10,\n            \"title\": \"TEST\",\n            \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n            \"upvoteCount\": 1,\n            \"downvoteCount\": 2,\n            \"comments\": [\n                {\n                    \"id\": 2,\n                    \"content\": \"hello to blog 10\",\n                    \"upvoteCount\": 0,\n                    \"downvoteCount\": 0,\n                    \"ratingScore\": 0\n                }\n            ],\n            \"ratingScore\": -1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "report BLOGPOST Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"blogPostId\": 4,\n  \"reason\": \"The blog has harmful intent.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/icr/report"
+			},
+			"response": [
+				{
+					"name": "report BLOGPOST Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNjUxMjIwLCJleHAiOjE3MzA2ODM2MjB9.pmX5qa1dHMlfAtOeEO3tApBcgJ6GtKBfyFtuoAR0pNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"blogPostId\": 4,\n  \"reason\": \"The blog has harmful intent.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/icr/report"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"10zji1a1fx14g\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "160"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 16:29:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Report for blog post submitted successfully!\",\n    \"report\": {\n        \"id\": 3,\n        \"reason\": \"The blog has harmful intent.\",\n        \"userId\": 16,\n        \"blogPostId\": 4,\n        \"commentId\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "report COMMENT Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"commentId\": 2,\n  \"reason\": \"The comment is abusive towards author.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/icr/report"
+			},
+			"response": [
+				{
+					"name": "report COMMENT Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJlbWFpbCI6InBzQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMwNjUxMjIwLCJleHAiOjE3MzA2ODM2MjB9.pmX5qa1dHMlfAtOeEO3tApBcgJ6GtKBfyFtuoAR0pNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"commentId\": 2,\n  \"reason\": \"The comment is abusive towards author.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/icr/report"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"3qkell3ucq4o\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 16:31:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Report for comment submitted successfully!\",\n    \"report\": {\n        \"id\": 4,\n        \"reason\": \"The comment is abusive towards author.\",\n        \"userId\": 16,\n        \"blogPostId\": null,\n        \"commentId\": 2\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "hide-content Test hiding a blog post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogPostId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/icr/hide-content"
+			},
+			"response": [
+				{
+					"name": "hide-content Test hiding a blog post",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImVtYWlsIjoiZXhhbXBsZTRAZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzA2NjU4ODIsImV4cCI6MTczMDY2Njc4Mn0.hZfnindL6_dSydSBVcxkGoNplj9EN0NDdRB6epe9Gtg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blogPostId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/icr/hide-content"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"clw8qtws2f16\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 20:32:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Content hidden successfully!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "hide-content Test hiding a comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentId\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/icr/hide-content"
+			},
+			"response": [
+				{
+					"name": "hide-content Test hiding a comment",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImVtYWlsIjoiZXhhbXBsZTRAZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzA2NjU4ODIsImV4cCI6MTczMDY2Njc4Mn0.hZfnindL6_dSydSBVcxkGoNplj9EN0NDdRB6epe9Gtg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/icr/hide-content"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"clw8qtws2f16\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Nov 2024 20:31:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Content hidden successfully!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "admin-sort New Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/icr/admin-sort"
+			},
+			"response": [
+				{
+					"name": "admin-sort New Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/icr/admin-sort"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "\"ii4nl9hqwn5v\""
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Nov 2024 12:10:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blogPosts\": [\n        {\n            \"id\": 1,\n            \"title\": \"New: Introduction to JavaScript\",\n            \"description\": \"This blog post provides an introduction to JavaScript, covering the basics of the language.\",\n            \"_count\": {\n                \"reports\": 0\n            }\n        }\n    ],\n    \"comments\": []\n}"
+				}
+			]
+		}
+	]
+}
