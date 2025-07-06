@@ -1,9 +1,4 @@
 # Scriptorium
-
-**Your Ultimate Coding Playground & Knowledge Sharing Platform**
-
----
-
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Getting Started](#getting-started)
@@ -15,10 +10,12 @@
 ---
 
 ## Project Overview
-Scriptorium is a modern web platform that allows developers to:
+Scriptorium is a full-stack application that allows new coders to:
 - **Write and execute code** in multiple programming languages securely using Docker containers.
-- **Create, share, and discover code templates** for rapid development and learning.
-- **Blog about coding topics** and interact with a developer community.
+- **Create, share, and discover code templates** for personal learning and sharing progress.
+- **Blog about coding topics** and interact with a developer community by commenting and liking.
+
+Vide Demo: [https://drive.google.com/file/d/1ptSbtoSexOckM0dMTFxNAyOIjOS4vjVJ/view?usp=sharing] (https://drive.google.com/file/d/1ptSbtoSexOckM0dMTFxNAyOIjOS4vjVJ/view?usp=sharing)
 
 **Motivation:**
 Scriptorium was built to provide a single, integrated space for learning by doing, sharing knowledge, and fostering a collaborative coding community.
@@ -89,19 +86,5 @@ Visit [http://localhost:3000](http://localhost:3000) to get started!
 - Mobile app and cloud deployment support
 - Enterprise features (SSO, advanced team management)
 
----
-
-## Contribution Guidelines
-We welcome contributions from the community!
-1. Fork the repository and create a feature branch.
-2. Set up the project locally using the instructions above.
-3. Make your changes following our code style (TypeScript, Prettier, ESLint).
-4. Write tests for new features and bug fixes.
-5. Update documentation as needed.
-6. Submit a pull request with a clear description.
-
----
-
-**Made with ❤️ by the Scriptorium Team**
 
 
