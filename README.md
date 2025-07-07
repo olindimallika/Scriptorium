@@ -10,13 +10,13 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 - [🎯 Project Overview](#project-overview)
 - [🚀 Getting Started](#getting-started)
 - [⭐ Key Features](#key-features)
 - [🛠️ Tech Stack](#tech-stack)
 - [🔌 API Examples](#api-examples)
-- [🗺️ Roadmap](#roadmap)
+- [📈 Future Improvements](#Future-Improvements)
 - [🤝 Contribution Guidelines](#contribution-guidelines)
 
 ---
@@ -43,13 +43,13 @@ Scriptorium was built to provide a single platform for new developers to blog th
 
 ## 🚀 Getting Started
 
-### 📋 Prerequisites
+### Prerequisites
 - **Node.js** 18+
 - **npm** 9+ or **yarn** 1.22+
 - **Docker** 20+ (for code execution)
 - **Git** 2.30+
 
-### ⚡ Quick Setup
+### Quick Setup
 Run this command in your terminal after cloning the repository:
 
 ```bash
@@ -269,12 +269,12 @@ curl -X PUT http://localhost:3000/api/icr/hide-content \
 
 ---
 
-### Future Improvements
+## 📈 Future Improvements
 - Deploy using **Vercel** so multiple people can share their progress!
 
 ---
 
-> **For future contributions:** 
+## 🤝 For future contributions:
 ### Code Style
 - Follow the existing code style
 - Add comments for large blocks of logic
@@ -289,7 +289,3 @@ curl -X PUT http://localhost:3000/api/icr/hide-content \
 [![GitHub forks](https://img.shields.io/github/forks/yourusername/scriptorium?style=social)](https://github.com/yourusername/scriptorium)
 
 </div>
-
-
-
-
