@@ -17,7 +17,7 @@
 - [🛠️ Tech Stack](#tech-stack)
 - [🔌 API Examples](#api-examples)
 - [📈 Future Improvements](#Future-Improvements)
-- [🤝 Contribution Guidelines](#contribution-guidelines)
+- [🤝 For future contributions](#For-future-contributions)
 
 ---
 
