@@ -1,4 +1,4 @@
-# 🚀 Scriptorium
+# Scriptorium
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -11,17 +11,17 @@
 ---
 
 ## Table of Contents
-- [🎯 Project Overview](#project-overview)
-- [🚀 Getting Started](#getting-started)
-- [⭐ Key Features](#key-features)
-- [🛠️ Tech Stack](#tech-stack)
-- [🔌 API Examples](#api-examples)
-- [📈 Future Improvements](#Future-Improvements)
-- [🤝 For future contributions](#For-future-contributions)
+- [Project Overview](#project-overview)
+- [Getting Started](#getting-started)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [API Examples](#api-examples)
+- [Future Improvements](#Future-Improvements)
+- [For future contributions](#For-future-contributions)
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 **Scriptorium** is a full-stack application that allows new coders to:
 
@@ -41,7 +41,7 @@ Scriptorium was built to provide a single platform for new developers to blog th
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js** 18+
@@ -62,7 +62,7 @@ Visit **[http://localhost:3000](http://localhost:3000)** to get started!
 
 ---
 
-## ⭐ Key Features
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
@@ -76,7 +76,7 @@ Visit **[http://localhost:3000](http://localhost:3000)** to get started!
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### 🎨 Frontend
 - **[Next.js 14](https://nextjs.org/)** - React framework with App Router
@@ -102,7 +102,7 @@ Visit **[http://localhost:3000](http://localhost:3000)** to get started!
 
 ---
 
-## 🔌 API Examples
+## API Examples
 
 > **API Test Points from [Postman API Testing Suite](https://github.com/olindimallika/Scriptorium/blob/main/postman-api-testing-suite.json)**
 
@@ -269,12 +269,12 @@ curl -X PUT http://localhost:3000/api/icr/hide-content \
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 - Deploy using **Vercel** so multiple people can share their progress!
 
 ---
 
-## 🤝 For future contributions:
+## For future contributions:
 ### Code Style
 - Follow the existing code style
 - Add comments for large blocks of logic
