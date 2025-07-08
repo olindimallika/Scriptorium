@@ -34,7 +34,7 @@
 - **Create, share, and discover code templates** for personal learning and sharing progress. &#10549;
 ![Screenshot](screenshots/modifiedandforked.png)
 
-🎬 **Video Demo:** [https://drive.google.com/file/d/1ptSbtoSexOckM0dMTFxNAyOIjOS4vjVJ/view?usp=sharing](https://drive.google.com/file/d/1ptSbtoSexOckM0dMTFxNAyOIjOS4vjVJ/view?usp=sharing)
+### 🎬 **Video Demo:** [https://drive.google.com/file/d/1ptSbtoSexOckM0dMTFxNAyOIjOS4vjVJ/view?usp=sharing](https://drive.google.com/file/d/1ptSbtoSexOckM0dMTFxNAyOIjOS4vjVJ/view?usp=sharing)
 
 ### 💡 Motivation
 Scriptorium was built to provide a single platform for new developers to blog their coding journey and learn by doing!
